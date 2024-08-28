@@ -1,13 +1,12 @@
 import vk_api
 import re
 
-from vkbottle.bot import Message
+from vkbottle.bot import Message, Bot
 
-from config import token_user
-
-from bot import bot
+from config import token_user, token_bot
 
 token = token_user
+bot = Bot(token_bot)
 
 async def get_user_name(user_id: int) -> str:
     user_info = await bot.api.users.get(user_ids=user_id)
